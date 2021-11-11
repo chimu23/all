@@ -24,9 +24,9 @@ on:
 jobs:
   build-and-deploy:
     strategy:
-    matrix:
-      node-version: [12.x, 14.x, 16.x]
-      # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
