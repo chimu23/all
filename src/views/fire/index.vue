@@ -3,5 +3,5 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div>fire</div>
+  <div>fire123</div>
 </template>
