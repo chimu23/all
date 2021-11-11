@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-
+console.log(process.env.NODE_ENV)
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), vueJsx()],
@@ -12,6 +12,9 @@ export default defineConfig({
     },
   },
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/all/',
+  build: {
+    assetsDir: 'all',
+  },
   server: {
     host: '0.0.0.0',
     proxy: {
