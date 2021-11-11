@@ -4,4 +4,5 @@ import { ref } from 'vue'
 
 <template>
   <div>Hello World!</div>
+  <div>Hello World!</div>
 </template>
