@@ -1,1 +1,0 @@
-import{o,d as l,F as t,e}from"./vendor.dc60cad0.js";const s=e("div",null,"Hello World!",-1),d=e("div",null,"Hello World!",-1),n=e("div",null,"Hello World!",-1),i={setup(r){return(c,a)=>(o(),l(t,null,[s,d,n],64))}};export{i as default};
