@@ -9,7 +9,7 @@ on:
 
 jobs:
 - install: npm install, build, and test
-      run: |
+      run: 
         npm i
         npm run build --if-present
 - depoly: Deploy
