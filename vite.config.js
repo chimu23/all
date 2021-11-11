@@ -11,7 +11,7 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  // publicPath: './',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/all/',
   server: {
     host: '0.0.0.0',
     proxy: {

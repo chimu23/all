@@ -8,16 +8,13 @@ on:
     branches: [master]
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v2
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 密钥
-          BRANCH: gh-pages # 发布分支
-          FOLDER: dist # vue-cli build 后的目录
-          BUILD_SCRIPT: npm install && npm run build # 构建脚本
+- install: npm install, build, and test
+      run: |
+        npm ci
+        npm run build --if-present
+- depoly: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACCESS-TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: dist
