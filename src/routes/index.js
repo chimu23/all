@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from 'vue-router'
 import Layout from '@/components/Layout/index.vue'
 import vuex from '@/store'
 
@@ -22,7 +26,8 @@ const routes = [
 ]
 vuex.commit('route/routeList', routes[0].children)
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
 

@@ -10,7 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  base: 'all',
+  base: './',
   // publicPath: process.env.NODE_ENV === 'development' ? '/' : '/all/',
   build: {
     // assetsDir: 'all',
