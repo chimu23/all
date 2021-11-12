@@ -1,7 +1,7 @@
 <script setup>
 import { addTodo, updateTodo } from '@/api/todo'
 import Dialog from '@/components/Dialog/index.vue'
-import EInput from '@/components/Form/EInput.vue'
+import EInput from '@/components/E/Form/EInput.vue'
 import { computed, ref, watch, watchEffect } from 'vue'
 
 const emit = defineEmits(['addItem', 'updateItem'])

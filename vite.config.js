@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-// https://vitejs.dev/config/
+// https://cn.vitejs.dev/guide/build.html#customizing-the-build
+const isDev = process.env.NODE_ENV === 'development' ? true : false
 export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
@@ -10,13 +11,10 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  base: './',
-  // publicPath: process.env.NODE_ENV === 'development' ? '/' : '/all/',
-  build: {
-    // assetsDir: 'all',
-    // publicDir: 'all',
-  },
-  // publicPath: './',
+  base: isDev ? '/' : '/all/',
+  // build: {
+  // assetsDir: 'all', //指定生成静态资源的存放路径(目录的意思)
+  // },
   server: {
     host: '0.0.0.0',
     proxy: {

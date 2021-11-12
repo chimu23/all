@@ -27,8 +27,10 @@ const routes = [
 ]
 vuex.commit('route/routeList', routes[0].children)
 const router = createRouter({
-  // history: createWebHistory(),
-  history: createWebHashHistory(),
+  history:
+    process.env.NODE_ENV === 'development'
+      ? createWebHistory()
+      : createWebHashHistory(),
   routes,
 })
 
