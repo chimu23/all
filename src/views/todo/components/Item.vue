@@ -6,10 +6,10 @@ import { CodeIcon } from '@heroicons/vue/solid'
 
 const props = defineProps(['item', 'index'])
 const emit = defineEmits('editItem')
-const checked = ref(false)
 
 function iconClick() {
-  if (checked.value) return
+  const { value: checked } = props.item.checked
+  if (checked) return
   emit('editItem', props.item)
 }
 </script>
@@ -31,16 +31,16 @@ function iconClick() {
     "
   >
     <e-checkbox
-      v-model="checked"
+      :modelValue="item.checked"
       @change="$emit('delete-item', index)"
       :class="{
-        ' line-through italic text-gray-200 cursor-not-allowed': checked,
+        ' line-through italic text-gray-200 cursor-not-allowed': item.checked,
       }"
       >{{ item.title }}</e-checkbox
     >
     <CodeIcon
       class="w-5 text-indigo-200 group-hover:text-theme cursor-pointer"
-      :class="{ ' cursor-not-allowed': checked }"
+      :class="{ ' cursor-not-allowed': item.checked }"
       @click="iconClick"
     />
   </div>

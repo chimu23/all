@@ -7,28 +7,18 @@ import ETab from '@/components/E/Tab/index.vue'
 const todoDialogRef = ref(null)
 const isShow = ref(false)
 
-const todo = reactive({
-  item: { title: '', note: '' },
-})
-
 function updateItem(item) {
   const { _id } = item
   let index = todo.list.findIndex((item) => item._id === _id)
   todo.list[index] = item
 }
+
+const tabs = ref(['全部', '已完成', '未完成'])
+const currentTab = ref(tabs.value[0])
+
 function tabChange(index) {
-  currentTabIndex.value = index
+  currentTab.value = tabs.value[index]
 }
-const currentTabIndex = ref(0)
-// let list = computed(() => {
-//   if (currentTabIndex === 0) {
-//     return todo.list
-//   } else if (currentTabIndex === 1) {
-//     return todo.list.filter((item) => item.checked === true)
-//   } else {
-//     return todo.list.filter((item) => item.checked === false)
-//   }
-// })
 </script>
 
 <template>
@@ -40,12 +30,8 @@ const currentTabIndex = ref(0)
         @click=";(todo.item = {}), (isShow = true)"
       />
     </div>
-    <ETab
-      @change="tabChange"
-      class="mb-2"
-      :list="['全部', '已完成', '未完成']"
-    ></ETab>
-    <todoList></todoList>
+    <ETab @change="tabChange" class="mb-2" :list="tabs"></ETab>
+    <todoList @edit-item="isShow = true" :tab-info="currentTab"></todoList>
     <TodoDialog
       ref="todoDialogRef"
       v-model:isShow="isShow"
