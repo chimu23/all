@@ -3,7 +3,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 // https://cn.vitejs.dev/guide/build.html#customizing-the-build
-const isDev = process.env.NODE_ENV === 'development' ? true : false
+const isDev = process.env.NODE_ENV === 'production' ? false : true
+
 export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
