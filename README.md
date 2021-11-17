@@ -102,3 +102,30 @@
        git config --list
       ```
   
+8. ### 重新设置远程仓库
+
+   - 查看全部远程仓库
+
+      ```
+       git remote
+      ```
+      
+   - 重新设置origin对应的仓库
+
+      ```
+       git remote set-url origin http://192.168.100.235:9797/john/git_test.git
+      ```
+        
+   - 添加仓库
+
+      ```
+       git remote add origin http://192.168.100.235:9797/john/git_test.git
+      ```
+  
+   - 删除仓库
+
+      ```
+       git remote rm origin
+      ```
+      
+  
