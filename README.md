@@ -81,3 +81,24 @@
       ```
        git reset --soft HEAD^
       ```
+
+7. ### alias
+
+   - 设置别名
+
+      ```
+       git config --global alias.co checkout
+      ```
+      
+   - 取消别名
+
+      ```
+       git config --global --unset alias.br
+      ```
+  
+   - 查看配置
+
+      ```
+       git config --list
+      ```
+  
