@@ -128,4 +128,29 @@
        git remote rm origin
       ```
       
-  
+9. ### cherry-pick 将代码从一个分支转移到另一个分支是常见需求 [link](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
+
+   - 转移某个commit(先 checkout 到要转移的目标分支)
+
+      ```
+       git cherry-pick <commitHash>
+      ```
+      
+   - 转移多个commit(转移A、B)
+
+      ```
+       git cherry-pick <HashA> <HashB>
+      ```
+        
+   - 转移多个commit(转移A-B)(不包括A，包括A需要改为A^..B)
+
+      ```
+       git cherry-pick <HashA>..<HashB>
+      ```
+
+   - 删除仓库
+
+      ```
+       git remote rm origin
+      ```
+         
