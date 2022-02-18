@@ -74,6 +74,13 @@
      ```
       git checkout -b dev origin/develop
      ```
+   - 找回删除分支
+
+     ```
+      git log -g                                 查看对应的commit_id    
+      git branch <recover_branch> <commit_id>
+      git chekout <recover_branch>
+     ```
 6. ### reset
 
    - 撤销改动 --soft 保留工作区内容  --hard 不保留工作区内容 HEAD^上一个版本 HEAD~2上两个版本
